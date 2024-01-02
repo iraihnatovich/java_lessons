@@ -6,7 +6,7 @@ public class MultiArrayTaskExtra2 {
     public static void main(String[] args) {
         int[][] arrA = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 0, 0}};
         int[][] arrB = {{1, 2, 3}, {1, 1, 1}, {0, 0, 0}, {2, 1, 0}};
-        if (arrA[0].length != arrB.length) // columns А vs lines B
+        if (arrA[0].length != arrB.length) // columns А vs lines B (only for rectangle arrays)
         {
             System.out.println("the number of columns in ArrA isn't equal to the number of rows in arrB");
             return;
