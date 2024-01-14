@@ -7,18 +7,10 @@ public class ConditionTask1 {
         Scanner num = new Scanner(System.in);
         int month = num.nextInt();
         switch (month) {
-            case 1 -> System.out.println("Winter");
-            case 2 -> System.out.println("Winter");
-            case 3 -> System.out.println("Spring");
-            case 4 -> System.out.println("Spring");
-            case 5 -> System.out.println("Spring");
-            case 6 -> System.out.println("Summer");
-            case 7 -> System.out.println("Summer");
-            case 8 -> System.out.println("Summer");
-            case 9 -> System.out.println("Autumn");
-            case 10 -> System.out.println("Autumn");
-            case 11 -> System.out.println("Autumn");
-            case 12 -> System.out.println("Winter");
+            case 1, 2, 12 -> System.out.println("Winter");
+            case 3, 4, 5 -> System.out.println("Spring");
+            case 6, 7, 8 -> System.out.println("Summer");
+            case 9, 10, 11 -> System.out.println("Autumn");
             default -> System.out.println("no season found");
         }
     }
