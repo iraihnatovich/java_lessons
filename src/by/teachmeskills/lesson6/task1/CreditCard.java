@@ -10,10 +10,10 @@ import java.util.Random;
 
 public class CreditCard {
     int number;
-    float balance;
+    double balance;
 
-    float round(float value, int n) {
-        value = (float) Math.round(value * n) / n;
+    double round(double value, int n) {
+        value = (double) Math.round(value * n) / n;
         return value;
     }
 
@@ -23,14 +23,14 @@ public class CreditCard {
         balance = round(n.nextFloat(10000), 100);
     }
 
-    float increase(float sumOfIncome) {
+    double increase (double sumOfIncome) {
         balance += round(sumOfIncome, 100);
         balance = round(balance, 100);
         // если пишу без строки выше либо balance=round(balance, 100)+round(sumOfIncome, 100) -- не всегда окргуляет до сотых
         return balance;
     }
 
-    float withdraw(float sumOfwithdraw) {
+    double withdraw(double sumOfwithdraw) {
         balance -= round(sumOfwithdraw, 100);
         balance = round(balance, 100);
         return balance;
@@ -45,9 +45,9 @@ class testCards {
             cardsSet[i] = new CreditCard(i + 1);
             System.out.println(cardsSet[i].number + " card balance = " + cardsSet[i].balance);
         }
-        cardsSet[0].increase(100.873284728F);
-        cardsSet[1].increase(50.7544F);
-        cardsSet[2].withdraw(100.1F);
+        cardsSet[0].increase(100.873284728);
+        cardsSet[1].increase(52.7544);
+        cardsSet[2].withdraw(100.1);
 
         for (CreditCard cardItem : cardsSet) {
             System.out.println(cardItem.number + "card balance after operations = " + cardItem.balance);
