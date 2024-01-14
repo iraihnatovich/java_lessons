@@ -23,7 +23,7 @@ public class CreditCard {
         balance = round(n.nextFloat(10000), 100);
     }
 
-    double increase (double sumOfIncome) {
+    double increase(double sumOfIncome) {
         balance += round(sumOfIncome, 100);
         balance = round(balance, 100);
         // если пишу без строки выше либо balance=round(balance, 100)+round(sumOfIncome, 100) -- не всегда окргуляет до сотых
@@ -46,7 +46,7 @@ class testCards {
             System.out.println(cardsSet[i].number + " card balance = " + cardsSet[i].balance);
         }
         cardsSet[0].increase(100.8732848);
-        cardsSet[1].increase(52.7544);
+        cardsSet[1].increase(52.75144);
         cardsSet[2].withdraw(100.1);
 
         for (CreditCard cardItem : cardsSet) {

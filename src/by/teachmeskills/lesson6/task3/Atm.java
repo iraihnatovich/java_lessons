@@ -33,44 +33,43 @@ public class Atm {
     }
 
     boolean atmCashWithdraw(int requestedSum) { //знаю, что решается рекурсией, но пока разбираюсь с этим
-        int count100 =0;
-        int count50 =0;
-        int count20 =0;
-        while (banknote100 > 0 && requestedSum>=100) { //берем все сотки
-            if(requestedSum < 100) break;
+        int count100 = 0;
+        int count50 = 0;
+        int count20 = 0;
+        while (banknote100 > 0 && requestedSum >= 100) { //берем все сотки
+            if (requestedSum < 100) break;
             requestedSum -= 100;
             banknote100--;
             count100++;
         }
         //хватает 50к
-        if (requestedSum/50 <= banknote50 && requestedSum>=50){
-            while ( requestedSum %50 != 0 && banknote20 > 0){ // берем 20ки, пока не станет кратно 50
+        if (requestedSum / 50 <= banknote50 && requestedSum >= 50) {
+            while (requestedSum % 50 != 0 && banknote20 > 0) { // берем 20ки, пока не станет кратно 50
                 requestedSum -= 20;
                 banknote20--;
                 count20++;
             }
-            while (banknote50 > 0){
-                if(requestedSum <= 0) break;
+            while (banknote50 > 0) {
+                if (requestedSum <= 0) break;
                 requestedSum -= 50;
                 banknote50--;
                 count50++;
             }
         }
-        if (requestedSum/50 > banknote50 && requestedSum>=50){ // если НЕ хватает 50к
-            while ( requestedSum %50 != 0 && banknote20 > 0){
+        if (requestedSum / 50 > banknote50 && requestedSum >= 50) { // если НЕ хватает 50к
+            while (requestedSum % 50 != 0 && banknote20 > 0) {
                 requestedSum -= 20;
                 banknote20--;
                 count20++;
             }
-            if ((requestedSum - (banknote50*50)) %20 == 0){ // сможем ли добрать 20ками после выгребания всех 50к e.g. 120 byn
-                while (banknote50>0){
+            if ((requestedSum - (banknote50 * 50)) % 20 == 0) { // сможем ли добрать 20ками после выгребания всех 50к e.g. 120 byn
+                while (banknote50 > 0) {
                     requestedSum -= 50;
                     banknote50--;
                     count50++;
                 }
-            }
-            else {
-                while (banknote50>1){
+            } else {
+                while (banknote50 > 1) {
                     requestedSum -= 50;
                     banknote50--;
                     count50++;
@@ -78,16 +77,16 @@ public class Atm {
             }
         }
         while (banknote20 > 0) {
-            if(requestedSum <= 0) break;
+            if (requestedSum <= 0) break;
             requestedSum -= 20;
             banknote20--;
             count20++;
         }
 
 //        System.out.println("requestedSum left = "+requestedSum);
-        System.out.println("banknote20 get =  "+count20);
-        System.out.println("banknote50 get = "+count50);
-        System.out.println("banknote100 get = "+count100);
+        System.out.println("banknote20 get =  " + count20);
+        System.out.println("banknote50 get = " + count50);
+        System.out.println("banknote100 get = " + count100);
 
         return requestedSum == 0;
     }

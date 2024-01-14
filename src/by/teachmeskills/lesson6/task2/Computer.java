@@ -22,12 +22,14 @@ public class Computer {
 
         RamPC() { // для дефолтных т е 0 и null при отсут парам
         }
+
         RamPC(String ramName, int ramVolume) {
             this.ramName = ramName;
             this.ramVolume = ramVolume;
         }
+
         String getDetailRam() {
-            return "RAM " + ramName + "  volume = " + ramVolume;
+            return "RAM " + ramName + " volume = " + ramVolume;
         }
 
     }
@@ -39,6 +41,7 @@ public class Computer {
 
         HddPC() {
         }
+
         HddPC(String hddName, int hddVolume, boolean isHddInternal) {
             this.hddName = hddName;
             this.hddVolume = hddVolume;
