@@ -78,7 +78,7 @@ public class Computer {
 
 class DemoPC {
     public static void main(String[] args) {
-        Computer pc1 = new Computer(1224.89, "Dell ABC1213");
+        Computer pc1 = new Computer(1324.89, "Dell ABC1213");
         System.out.println(pc1.getGeneralInfo());
         System.out.println(pc1.ram.getDetailRam());
         Computer pc2 = new Computer(1500, "Mac", "testRAM",
