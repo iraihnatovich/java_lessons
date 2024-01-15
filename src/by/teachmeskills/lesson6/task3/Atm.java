@@ -95,7 +95,7 @@ public class Atm {
 
 class TestAtm {
     public static void main(String[] args) {
-        Atm x = new Atm(30, 2, 0);
+        Atm x = new Atm(20, 2, 0);
 //        x.atmFill(310);
         System.out.println(x.atmCashWithdraw(270));
 //        System.out.println();
