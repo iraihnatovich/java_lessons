@@ -81,7 +81,7 @@ class DemoPC {
         Computer pc1 = new Computer(1354.89, "Dell ABC1213");
         System.out.println(pc1.getGeneralInfo());
         System.out.println(pc1.ram.getDetailRam());
-        Computer pc2 = new Computer(1500, "Mac", "testRAM",
+        Computer pc2 = new Computer(1530, "Mac", "testRAM",
                 12222, "newHdd", 5445, false);
         System.out.println(pc2.getGeneralInfo());
         System.out.println(pc2.ram.getDetailRam());
