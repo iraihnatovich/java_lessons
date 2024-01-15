@@ -45,7 +45,7 @@ class testCards {
             cardsSet[i] = new CreditCard(i + 1);
             System.out.println(cardsSet[i].number + " card balance = " + cardsSet[i].balance);
         }
-        cardsSet[0].increase(100.8733848);
+        cardsSet[0].increase(100.873848);
         cardsSet[1].increase(52.74014);
         cardsSet[2].withdraw(100.1);
 
