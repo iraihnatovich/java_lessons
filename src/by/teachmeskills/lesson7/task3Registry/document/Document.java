@@ -13,8 +13,8 @@ abstract public class Document {
         this.documentNum = documentNum;
     }
 
-    public String getDocNum() {
-        return String.valueOf(documentNum);
+    public int getDocNum() {
+        return documentNum;
     }
 
     public String getGeneralInfo() {
