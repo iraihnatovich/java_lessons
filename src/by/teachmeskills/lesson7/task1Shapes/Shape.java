@@ -88,7 +88,7 @@ class TestShapes {
         Shape[] myShapes =
                 {
                         new Triangle(3, 4, 6),
-                        new Circle(103),
+                        new Circle(102),
                         new Rectangle(4, 11),
                         new Rectangle(24),
                         new Square(13),

@@ -1,7 +1,7 @@
-package by.teachmeskills.lesson7.task3Reg.registry;
+package by.teachmeskills.lesson7.task3Registry.registry;
 
-import by.teachmeskills.lesson7.task3Reg.document.Document;
-import by.teachmeskills.lesson7.task3Reg.infoInteract.InfoInteraction;
+import by.teachmeskills.lesson7.task3Registry.document.Document;
+import by.teachmeskills.lesson7.task3Registry.infoInteract.InfoInteraction;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson7.task3Reg.document;
+package by.teachmeskills.lesson7.task3Registry.document;
 
 import java.time.LocalDate;
 
