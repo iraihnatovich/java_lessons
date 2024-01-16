@@ -1,6 +1,6 @@
-package by.teachmeskills.lesson7.task3Registry.delivery;
+package by.teachmeskills.lesson7.task3Reg.delivery;
 
-import by.teachmeskills.lesson7.task3Registry.document.Document;
+import by.teachmeskills.lesson7.task3Reg.document.Document;
 
 public class DeliveryContract extends Document { //контракт на поставку
     String productType; //предполагаю, что 1 тип = 1 поставка

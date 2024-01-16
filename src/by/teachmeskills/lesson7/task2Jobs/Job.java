@@ -32,7 +32,7 @@ class Worker extends Job {
     }
 
     public String occupation() {
-        return "task exe";
+        return "task exeсution";
     }
 }
 

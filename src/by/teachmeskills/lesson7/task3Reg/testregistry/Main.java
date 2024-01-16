@@ -1,9 +1,9 @@
-package by.teachmeskills.lesson7.task3Registry.testregistry;
+package by.teachmeskills.lesson7.task3Reg.testregistry;
 
-import by.teachmeskills.lesson7.task3Registry.delivery.DeliveryContract;
-import by.teachmeskills.lesson7.task3Registry.invoice.Invoice;
-import by.teachmeskills.lesson7.task3Registry.labor.LaborContract;
-import by.teachmeskills.lesson7.task3Registry.registry.Registry;
+import by.teachmeskills.lesson7.task3Reg.delivery.DeliveryContract;
+import by.teachmeskills.lesson7.task3Reg.invoice.Invoice;
+import by.teachmeskills.lesson7.task3Reg.labor.LaborContract;
+import by.teachmeskills.lesson7.task3Reg.registry.Registry;
 
 public class Main {
     public static void main(String[] args) {

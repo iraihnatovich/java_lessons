@@ -1,6 +1,6 @@
-package by.teachmeskills.lesson7.task3Registry.labor;
+package by.teachmeskills.lesson7.task3Reg.labor;
 
-import by.teachmeskills.lesson7.task3Registry.document.Document;
+import by.teachmeskills.lesson7.task3Reg.document.Document;
 
 import java.time.LocalDate;
 

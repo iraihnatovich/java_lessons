@@ -1,6 +1,6 @@
-package by.teachmeskills.lesson7.task3Registry.invoice;
+package by.teachmeskills.lesson7.task3Reg.invoice;
 
-import by.teachmeskills.lesson7.task3Registry.document.Document;
+import by.teachmeskills.lesson7.task3Reg.document.Document;
 
 public class Invoice extends Document {
     double finalSumOfMonth;
