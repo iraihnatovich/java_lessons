@@ -33,8 +33,8 @@ public enum TreatmentPlan {
     }
 
     static TreatmentPlan selectDoctor(int treatmentCode) {
-        for (TreatmentPlan doctor: TreatmentPlan.values()) {
-            if(doctor.getCode() == treatmentCode){
+        for (TreatmentPlan doctor : TreatmentPlan.values()) {
+            if (doctor.getCode() == treatmentCode) {
                 return doctor;
             }
         }
