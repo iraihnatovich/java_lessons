@@ -16,7 +16,7 @@ public class Computer {
     RamPC ram; // рам и хдд как св-ва экземпляров класса компьютер
     HddPC hdd;
 
-    class RamPC {
+    static class RamPC {
         String ramName;
         int ramVolume;
 
@@ -34,7 +34,7 @@ public class Computer {
 
     }
 
-    class HddPC {
+    static class HddPC {
         String hddName;
         int hddVolume;
         boolean isHddInternal;

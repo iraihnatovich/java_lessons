@@ -13,8 +13,7 @@ public class CreditCard {
     double balance;
 
     double round(double value, int n) {
-        value = (double) Math.round(value * n) / n;
-        return value;
+        return (double) Math.round(value * n) / n;
     }
 
     CreditCard(int number) {
@@ -30,10 +29,13 @@ public class CreditCard {
         return balance;
     }
 
+    //double value = 0.585;
+    //System.out.println(new BigDecimal(value));
+    //System.out.println(BigDecimal.valueOf(value));
+
     double withdraw(double sumOfwithdraw) {
         balance -= round(sumOfwithdraw, 100);
-        balance = round(balance, 100);
-        return balance;
+        return round(balance, 100);
     }
 
 }
