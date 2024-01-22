@@ -67,17 +67,10 @@ class Rectangle extends Shape {
 }
 
 class Square extends Rectangle {
-    Square(double sideA, double sideB) {
-        super(sideA, sideB);
+    Square(double sideA) {
+        super(sideA, sideA);
     }
 
-    public double perimeter() {
-        return sideA * 4;
-    }
-
-    public double area() {
-        return sideA * sideA;
-    }
 }
 
 class TestShapes {
@@ -87,14 +80,13 @@ class TestShapes {
                         new Triangle(3, 4, 6),
                         new Circle(102),
                         new Rectangle(4, 11),
-                        new Square(13, 13),
-                        new Square(20, 20),
+                        new Square(13),
+                        new Square(20),
                 };
         double perimeterOfAll = 0;
         for (int i = 0; i < myShapes.length; i++) {
             perimeterOfAll += myShapes[i].perimeter();
         }
         System.out.println(perimeterOfAll);
-
     }
 }

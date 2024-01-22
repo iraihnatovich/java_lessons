@@ -9,8 +9,8 @@ public class Invoice extends Document {
     public Invoice() {
     }
 
-    public Invoice(int documentNum, double finalSumOfMonth, int depCode) {
-        super(documentNum);
+    public Invoice(String invoiceId, double finalSumOfMonth, int depCode) {
+        super(invoiceId);
         this.finalSumOfMonth = finalSumOfMonth;
         this.depCode = depCode;
     }

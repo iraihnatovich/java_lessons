@@ -3,29 +3,29 @@ package by.teachmeskills.lesson7.task3Registry.document;
 import java.time.LocalDate;
 
 abstract public class Document {
-    private final int documentNum;
+    private final String documentId;
     final LocalDate createdOn = LocalDate.now();
 
     public Document() {
-        this.documentNum = 0;
+        this.documentId = null;
     } // no param
 
-    public Document(int documentNum) { // with param
-        this.documentNum = documentNum;
+    public Document(String documentId) { // with param
+        this.documentId = documentId;
     }
 
-    public int getDocNum() {
-        return documentNum;
+    public String getDocId() {
+        return documentId;
     }
 
     public String getGeneralInfo() {
-        return "Document # " + documentNum + " created on " + createdOn;
+        return "Document # " + documentId + " created on " + createdOn;
     }
 
     public abstract String getDetails();
 
     @Override
     public boolean equals(Object obj) {
-        return getDocNum() == ((Document) obj).getDocNum();
+        return getDocId().equals(((Document) obj).getDocId());
     }
 }

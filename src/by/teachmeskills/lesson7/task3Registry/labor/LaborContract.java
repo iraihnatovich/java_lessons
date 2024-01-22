@@ -16,8 +16,8 @@ public class LaborContract extends Document {
 //        this.contractorName = contractorName;
 //        this.finishAt = LocalDate.of(yearOfFinish, mothOfFinish, dayOfFinish);
 //    }
-    public LaborContract(int documentNum, String contractorName, LocalDate finishAt) {
-        super(documentNum);
+    public LaborContract(String laborId, String contractorName, LocalDate finishAt) {
+        super(laborId);
         this.contractorName = contractorName;
         this.finishAt = finishAt;
     }

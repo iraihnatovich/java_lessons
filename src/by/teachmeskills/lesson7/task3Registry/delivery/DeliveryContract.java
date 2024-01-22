@@ -9,8 +9,8 @@ public class DeliveryContract extends Document { //контракт на пос�
     public DeliveryContract() {
     }
 
-    public DeliveryContract(int documentNum, String productType, int productAmount) {
-        super(documentNum);
+    public DeliveryContract(String deliveryId, String productType, int productAmount) {
+        super(deliveryId);
         this.productType = productType;
         this.productAmount = productAmount;
     }
