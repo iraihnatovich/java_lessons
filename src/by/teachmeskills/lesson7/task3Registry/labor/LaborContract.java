@@ -5,18 +5,22 @@ import by.teachmeskills.lesson7.task3Registry.document.Document;
 import java.time.LocalDate;
 
 public class LaborContract extends Document {
-    private LocalDate finishAt ;
+    private LocalDate finishAt;
     private String contractorName;
 
     public LaborContract() {
     }
 
-    public LaborContract(int documentNum, String contractorName, int yearOfFinish, int mothOfFinish, int dayOfFinish) {
+    //    public LaborContract(int documentNum, String contractorName, int yearOfFinish, int mothOfFinish, int dayOfFinish) {
+//        super(documentNum);
+//        this.contractorName = contractorName;
+//        this.finishAt = LocalDate.of(yearOfFinish, mothOfFinish, dayOfFinish);
+//    }
+    public LaborContract(int documentNum, String contractorName, LocalDate finishAt) {
         super(documentNum);
         this.contractorName = contractorName;
-        this.finishAt = LocalDate.of(yearOfFinish, mothOfFinish, dayOfFinish);
+        this.finishAt = finishAt;
     }
-
 
 
     public String getDetails() {

@@ -5,10 +5,10 @@ import by.teachmeskills.lesson7.task3Registry.infoInteract.DocumentRegistryImple
 
 public class Registry implements DocumentRegistryImplementation {
 
-   private final Document [] docsStorage;
+    private final Document[] docsStorage;
 
     public Registry() { // при создании регистра создаем массив из 2x10 (всегда!) доков
-        Document[] docsStorage = new Document [10]; // docsStorage[0] -- номера доков (по ним 'поиск'), docsStorage[1] - остальная инфа
+        Document[] docsStorage = new Document[10]; // docsStorage[0] -- номера доков (по ним 'поиск'), docsStorage[1] - остальная инфа
         this.docsStorage = docsStorage;
     }
     // предполагаю, что удалять и перезаписывать элементы не надо

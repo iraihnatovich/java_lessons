@@ -7,14 +7,14 @@ abstract public class Document {
     final LocalDate createdOn = LocalDate.now();
 
     public Document() {
-        this.documentNum =0;
+        this.documentNum = 0;
     } // no param
 
     public Document(int documentNum) { // with param
         this.documentNum = documentNum;
     }
 
-     public  int getDocNum() {
+    public int getDocNum() {
         return documentNum;
     }
 
@@ -26,6 +26,6 @@ abstract public class Document {
 
     @Override
     public boolean equals(Object obj) {
-        return getDocNum() == ((Document)obj).getDocNum();
+        return getDocNum() == ((Document) obj).getDocNum();
     }
 }
