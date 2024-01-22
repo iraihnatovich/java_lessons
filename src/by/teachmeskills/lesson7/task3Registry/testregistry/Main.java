@@ -9,15 +9,15 @@ public class Main {
     public static void main(String[] args) {
         Invoice inv1 = new Invoice(123,1300.4,111);
         DeliveryContract delivery = new DeliveryContract(454545,"pineapple",37);
-        LaborContract contractLab = new LaborContract(99141499,"Anna",2025, 12,14);
-        LaborContract contract111 = new LaborContract(99141229,"Anna",2025, 12,14);
+        LaborContract contractLab = new LaborContract();
+        LaborContract contract111 = new LaborContract(666666, "Tom", 2025, 1,12);
         Registry myDisk = new Registry();
         myDisk.saveDoc(inv1);
         myDisk.saveDoc(delivery);
-        myDisk.saveDoc(contractLab);
-        myDisk.getInfo(inv1);
-        myDisk.getInfo(delivery);
-        myDisk.getInfo(contractLab);
-        myDisk.getInfo(contract111); // not saved
+        myDisk.saveDoc(contract111);
+        myDisk.printInfo(inv1);
+        myDisk.printInfo(delivery);
+        myDisk.printInfo(contractLab);
+        myDisk.printInfo(contract111);
     }
 }

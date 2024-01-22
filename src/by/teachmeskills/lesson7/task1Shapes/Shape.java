@@ -1,24 +1,20 @@
 package by.teachmeskills.lesson7.task1Shapes;
+
 //Написать иерархию классов «фигуры»
 //Фигура - Треугольник - Прямоутольник - Круг - Квадрат
 //Реализовать ф-ю подсчета площади для кажлого типа фигуры и подсчет периметра,
 //Создать массив из 5 фигур. Вывести на экран сумму периметра всех фигур в массиве
 abstract class Shape implements ShapeCalculation {
-    double sideA; //указываю длину отрезка, в случае круга радиус
 
-    // так как нет задачи рисовать фигуры -- мне кажется, нет смысла указывать точки x and y
-    Shape(double sideA) {
-        this.sideA = sideA;
-    }
 }
-//  методы интерфейса в классах-наследниках
 
 class Triangle extends Shape {
-    double sideB;
-    double sideC;
+    private final double sideA;
+    private final double sideB;
+    private final double sideC;
 
     Triangle(double sideA, double sideB, double sideC) {
-        super(sideA);
+        this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
     }
@@ -34,36 +30,30 @@ class Triangle extends Shape {
 }
 
 class Circle extends Shape {
-    Circle(double sideA) {
-        //sideA = radius
-        super(sideA);
+    private final double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
     }
 
     //C = 2 · π · r
     public double perimeter() {
-        return 2 * Math.PI * sideA;
+        return 2 * Math.PI * radius;
     }
 
     public double area() {
         // S = π × r2
-        return Math.PI * Math.pow(sideA, 2);
+        return Math.PI * Math.pow(radius, 2);
     }
 }
 
 class Rectangle extends Shape {
-    final double sideB;
-    final double angle;
+    protected final double sideA;
+    protected final double sideB;
 
     Rectangle(double sideA, double sideB) {
-        super(sideA);
+        this.sideA = sideA;
         this.sideB = sideB;
-        angle = 90;
-    }
-
-    Rectangle(double sideA) {// два коснтруктора, чтобы квадрат инициал только с 1 стороной
-        super(sideA);
-        sideB = sideA;
-        angle = 90;
     }
 
     public double perimeter() {
@@ -77,10 +67,17 @@ class Rectangle extends Shape {
 }
 
 class Square extends Rectangle {
-    Square(double sideA) {
-        super(sideA);
+    Square(double sideA, double sideB) {
+        super(sideA, sideB);
     }
-    //можем не переопределять методы прямоуголника
+
+    public double perimeter() {
+        return sideA * 4;
+    }
+
+    public double area() {
+        return sideA * sideA;
+    }
 }
 
 class TestShapes {
@@ -90,8 +87,8 @@ class TestShapes {
                         new Triangle(3, 4, 6),
                         new Circle(102),
                         new Rectangle(4, 11),
-                        new Rectangle(24),
-                        new Square(13),
+                        new Square(13, 13),
+                        new Square(20, 20),
                 };
         double perimeterOfAll = 0;
         for (int i = 0; i < myShapes.length; i++) {

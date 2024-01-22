@@ -5,8 +5,8 @@ import by.teachmeskills.lesson7.task3Registry.document.Document;
 import java.time.LocalDate;
 
 public class LaborContract extends Document {
-    LocalDate finishAt;
-    String contractorName;
+    private LocalDate finishAt ;
+    private String contractorName;
 
     public LaborContract() {
     }
@@ -16,6 +16,8 @@ public class LaborContract extends Document {
         this.contractorName = contractorName;
         this.finishAt = LocalDate.of(yearOfFinish, mothOfFinish, dayOfFinish);
     }
+
+
 
     public String getDetails() {
         return super.getGeneralInfo() + "\nContractor " + contractorName + "\nThis contract finishes at " + finishAt;

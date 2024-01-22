@@ -1,11 +1,11 @@
 package by.teachmeskills.lesson7.task3Registry.registry;
 
 import by.teachmeskills.lesson7.task3Registry.document.Document;
-import by.teachmeskills.lesson7.task3Registry.infoInteract.InfoInteraction;
+import by.teachmeskills.lesson7.task3Registry.infoInteract.DocumentRegistryImplementation;
 
-public class Registry implements InfoInteraction {
+public class Registry implements DocumentRegistryImplementation {
 
-    final Document [] docsStorage;
+   private final Document [] docsStorage;
 
     public Registry() { // при создании регистра создаем массив из 2x10 (всегда!) доков
         Document[] docsStorage = new Document [10]; // docsStorage[0] -- номера доков (по ним 'поиск'), docsStorage[1] - остальная инфа
@@ -22,18 +22,18 @@ public class Registry implements InfoInteraction {
         }
     }
 
-    public void getInfo(Document document) { //выводим всю инфу документа при совпадении номеров дока
-        boolean match = false;
+    public void printInfo(Document document) { //выводим всю инфу документа при совпадении номеров дока
+//        boolean match = false;
         for (int i = 0; i < docsStorage.length; i++) {
-            if (docsStorage[i] != null && document.getDocNum() == docsStorage[i].getDocNum()) {
-                match = true;
+            if (docsStorage[i] != null && document.equals(docsStorage[i])) {
+//                match = true;
                 System.out.println("Found: ");
                 System.out.println(docsStorage[i].getDetails());
-                break;
+                return; //заменила break на return, но теперь если нет в массиве, то просто ничего не выдает
             }
         }
-        String result = !match ? "No results found" : "";
-        System.out.println(result);
+//        String result = !match ? "No results found" : "";
+//        System.out.println(result);
     }
 }
 

@@ -3,8 +3,8 @@ package by.teachmeskills.lesson7.task3Registry.invoice;
 import by.teachmeskills.lesson7.task3Registry.document.Document;
 
 public class Invoice extends Document {
-    double finalSumOfMonth;
-    int depCode;
+    private double finalSumOfMonth;
+    private int depCode;
 
     public Invoice() {
     }

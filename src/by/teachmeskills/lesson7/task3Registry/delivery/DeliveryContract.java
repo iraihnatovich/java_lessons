@@ -3,8 +3,8 @@ package by.teachmeskills.lesson7.task3Registry.delivery;
 import by.teachmeskills.lesson7.task3Registry.document.Document;
 
 public class DeliveryContract extends Document { //контракт на поставку
-    String productType; //предполагаю, что 1 тип = 1 поставка
-    int productAmount;
+    private String productType; //предполагаю, что 1 тип = 1 поставка
+    private int productAmount;
 
     public DeliveryContract() {
     }
