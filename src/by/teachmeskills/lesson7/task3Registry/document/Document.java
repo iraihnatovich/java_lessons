@@ -14,7 +14,7 @@ abstract public class Document {
         this.documentNum = documentNum;
     }
 
-    public int getDocNum() {
+     public  int getDocNum() {
         return documentNum;
     }
 
@@ -24,8 +24,8 @@ abstract public class Document {
 
     public abstract String getDetails();
 
-//    @Override
-//    public boolean equals(Object obj) {
-//        return super.equals(obj);
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        return getDocNum() == ((Document)obj).getDocNum();
+    }
 }
