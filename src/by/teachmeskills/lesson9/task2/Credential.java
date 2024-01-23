@@ -17,13 +17,13 @@ public class Credential {
                                               String confirmPassword) throws WrongLoginException, WrongPasswordException {
         try {
             if (login.length() >= 20 || login.contains(" ")) {
-                throw new WrongLoginException("login problem");
+                throw new WrongLoginException("login problem: more than 20 symb or spaces");
             }
             if (password.length() >= 20 || password.contains(" ") || !isDigitPassword(password) || !password.equals(confirmPassword)) {
-                throw new WrongPasswordException("password problem");
+                throw new WrongPasswordException("password problem: more than 20 symb or spaces or ...");
             }
         } catch (WrongLoginException | WrongPasswordException e) {
-//            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
 
