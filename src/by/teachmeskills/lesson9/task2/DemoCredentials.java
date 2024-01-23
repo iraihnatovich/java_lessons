@@ -4,12 +4,6 @@ import static by.teachmeskills.lesson9.task2.Credential.isCorrectCredential;
 
 public class DemoCredentials {
     public static void main(String[] args) {
-        try {
-            isCorrectCredential("testqqq", "abbbbv", "abbbbv");
-        } catch (WrongLoginException | WrongPasswordException e) {
-            System.out.println(e.getMessage());
-        }
-
-
+        System.out.println(isCorrectCredential("t estqqq", "ab1bbbv", "ab1bbbv"));
     }
 }
