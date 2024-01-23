@@ -18,10 +18,10 @@ abstract public class Document {
         if (documentId.contains("abc")) {
             throw new HaveLettersException("abc");
         }
-        if (documentId.startsWith("555")) {
+        else if (documentId.startsWith("555")) {
             throw new StartsWithFiveException("555 symbols");
         }
-        if (documentId.endsWith("1a2b")) {
+        else if (documentId.endsWith("1a2b")) {
             throw new EndsInvalidCombinationException("1a2b combination");
         }
         this.documentId = documentId;
