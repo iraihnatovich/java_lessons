@@ -3,14 +3,12 @@ package by.teachmeskills.lesson9.task2;
 public class Credential {
 
     private static boolean isDigitPassword(String password) {
-        int countDigit = 0;
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))) {
-                countDigit += 1;
-                break;
+                return true;
             }
         }
-        return countDigit > 0;
+        return false;
     }
 
     public static boolean isCorrectCredential(String login, String password,
@@ -23,7 +21,7 @@ public class Credential {
                 throw new WrongPasswordException("password problem: more than 20 symb or spaces or ...");
             }
         } catch (WrongLoginException | WrongPasswordException e) {
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
             return false;
         }
 
