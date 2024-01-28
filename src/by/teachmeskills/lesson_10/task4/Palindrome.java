@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson10.task4;
+package by.teachmeskills.lesson_10.task4;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

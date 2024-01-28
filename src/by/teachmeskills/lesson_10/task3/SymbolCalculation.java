@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson10.task3;
+package by.teachmeskills.lesson_10.task3;
 
 class SymbolCalculation { //package private
     protected static int uniqueSymbols(String s) {

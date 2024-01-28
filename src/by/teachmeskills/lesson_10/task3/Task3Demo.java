@@ -1,8 +1,8 @@
-package by.teachmeskills.lesson10.task3;
+package by.teachmeskills.lesson_10.task3;
 
 import java.util.Scanner;
 
-import static by.teachmeskills.lesson10.task3.SymbolCalculation.uniqueSymbols;
+import static by.teachmeskills.lesson_10.task3.SymbolCalculation.uniqueSymbols;
 
 public class Task3Demo {
     public static void main(String[] args) {

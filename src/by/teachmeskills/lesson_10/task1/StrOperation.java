@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson10.task1;
+package by.teachmeskills.lesson_10.task1;
 
 import static java.lang.String.valueOf;
 

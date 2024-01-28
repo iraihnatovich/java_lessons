@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson10.task5;
+package by.teachmeskills.lesson_10.task5;
 
 import java.util.Scanner;
 
