@@ -24,12 +24,24 @@ class Palindrome { //package-private
         int wordPosition = setPosition();
         try {
             String[] words = phrase.split(" ");
-            StringBuilder checkedWord = new StringBuilder(words[wordPosition]).reverse();// words[wordPosition].equals(checkedWord.toString())
-            return words[wordPosition].contentEquals(checkedWord);
+            StringBuilder checkedWord = new StringBuilder(words[wordPosition-1]).reverse();
+            return words[wordPosition-1].contentEquals(checkedWord);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Incorrect number. Try again");
             return isPalindrome(phrase);
         }
     }
+
+//    protected static boolean isPalindrome(String phrase) {
+//        int wordPosition = setPosition();
+//        try {
+//            String[] words = phrase.split(" ");
+//            StringBuilder checkedWord = new StringBuilder(words[wordPosition]).reverse();// words[wordPosition].equals(checkedWord.toString())
+//            return words[wordPosition].contentEquals(checkedWord);
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("Incorrect number. Try again");
+//            return isPalindrome(phrase);
+//        }
+//    }
 
 }
