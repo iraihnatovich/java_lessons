@@ -2,6 +2,7 @@ package by.teachmeskills.lesson_10.task5;
 
 import java.util.Scanner;
 
+//Задублировать каждую букву из введенной строки
 public class Task5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

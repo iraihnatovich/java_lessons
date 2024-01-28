@@ -21,6 +21,7 @@ class StrOperation { //package-private
         return true;
     }
 
+    //выводим два первых блока по 4 цифры в одну строку
     protected static String getOnlyNumericBlock(String doc) {
         String result = "";
         String[] initialStringBlocks = doc.split("-");
@@ -32,6 +33,7 @@ class StrOperation { //package-private
         return result;
     }
 
+    //заменяем каждую букву (в блоках из 3 букв) на *
     protected static String hideAlphabeticBlock(String doc) {
         String[] initialStringBlocks = doc.split("-");
         for (int i = 0; i < initialStringBlocks.length; i++) {
@@ -43,6 +45,7 @@ class StrOperation { //package-private
         return String.join("-", initialStringBlocks);
     }
 
+    //выводим на экран только буквы в формате ууу/ууу/у/у
     protected static String onlyLetters(String doc) {
         for (int i = 0; i < doc.length(); i++) {
             if (Character.isAlphabetic(doc.charAt(i))) {
@@ -54,15 +57,18 @@ class StrOperation { //package-private
 
     }
 
+    //выводим на экран только буквы в формате Letters:YYY/YYY/Y/Y
     protected static StringBuilder onlyLettersToUpperCase(String doc) {
         StringBuilder result = new StringBuilder("Letters:");
         return result.append(onlyLetters(doc).toUpperCase());// в задании без пробелов строка-результат
     }
 
+    //содержит ли последовательность символов (независимо от регистра)
     protected static boolean hasSymbols(String doc, String symbolSet) {
         return doc.toUpperCase().contains(symbolSet.toUpperCase()) || doc.toLowerCase().contains(symbolSet.toLowerCase());
     }
 
+    //начинается ли с последовательность символов
     protected static boolean startWithSymbols(String doc, String symbolSet) {
         return doc.toUpperCase().startsWith(symbolSet.toUpperCase()) || doc.toLowerCase().startsWith(symbolSet.toLowerCase());
 
@@ -73,6 +79,7 @@ class StrOperation { //package-private
 
     }
 
+    //заканчивается ли с последовательностью символов
     protected static boolean endsWithSymbols(String doc, String symbolSet) {
         return doc.toUpperCase().endsWith(symbolSet.toUpperCase()) || doc.toLowerCase().endsWith(symbolSet.toLowerCase());
 

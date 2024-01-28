@@ -3,7 +3,7 @@ package by.teachmeskills.lesson_10.task3;
 import java.util.Scanner;
 
 import static by.teachmeskills.lesson_10.task3.SymbolCalculation.uniqueSymbols;
-
+//найти слово, в котором минимальное кол-во уникальных символов
 public class Task3Demo {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
