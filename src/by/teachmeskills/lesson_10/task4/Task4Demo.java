@@ -5,7 +5,7 @@ import java.util.Scanner;
 import static by.teachmeskills.lesson_10.task4.Palindrome.isPalindrome;
 
 //Является ли выбранное слово палиндромом
-// * Я сделала так: если введен 0 - проверяем первое слово и т.д.
+// * сделала так: если введен 1 - проверяем первое слово(так в задании)
 //Предусмотреть предупреждающие сообщения в случае ошибочных ситуаций
 public class Task4Demo {
     public static void main(String[] args) {
