@@ -1,7 +1,5 @@
 package by.teachmeskills.lesson_11;
 
-import by.teachmeskills.lesson7.task3Registry.document.Document;
-
 public class DocumentDummy {
     private int numDoc;
     private String name;

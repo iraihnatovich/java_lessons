@@ -30,14 +30,14 @@ public class MyCustomCollection<T> {
     public boolean addElement(T t) {
         if (getSize() == myArr.length) {
 //            grow(10);
-            grow(1); // решила увелич на 1
+            grow(1); // решила увеличивать на 1
         }
         myArr[getSize()] = t;
         return true;
     }
 
     public int getSize() {
-        if (myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
+        if (myArr.length == 0 || myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
             return myArr.length;
         } else {
             int index = 0;
@@ -47,7 +47,6 @@ public class MyCustomCollection<T> {
             return index;
         }
     }
-
 
     public Object getElement(int index) {
         try {
@@ -77,7 +76,7 @@ public class MyCustomCollection<T> {
         } catch (NullPointerException e) { // возможно при size < length (есть null)
 //             System.out.println("No matches found");
         }
-        System.out.println("No matches found"); // сообщ о несовпадинии должно быть и без NullPointerException
+        System.out.println("No matches found"); // сообщ о несовпадинии должно быть даже без NullPointerException
         return false;
     }
 

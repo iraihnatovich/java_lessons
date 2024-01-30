@@ -1,9 +1,9 @@
 package by.teachmeskills.lesson_11;
 
 
-public class Test {
+public class Demo {
     public static void main(String[] args) {
-        MyCustomCollection<Integer> intColl = new MyCustomCollection<Integer>(4);
+        MyCustomCollection<Integer> intColl = new MyCustomCollection<Integer>(0);
 //        intColl.addElement(12);
 //        intColl.addElement(113);
 //        intColl.addElement(933);
@@ -22,11 +22,13 @@ public class Test {
         documCollection.addElement(new DocumentDummy(76437, "dummy1"));
         documCollection.addElement(new DocumentDummy(263746, "dummy2"));
         System.out.println(documCollection.getElement(1));
-        System.out.println(documCollection.hasElement(test1)); //для этого класса сравниваем по номеру
+        System.out.println(documCollection.hasElement(test1)); //для этого класса сравниваю по numDoc
         System.out.println(documCollection.getSize());
         System.out.println(documCollection.removeElement(new DocumentDummy(76437, "dummy232")));
         System.out.println(documCollection);
         documCollection.clearAll();
         System.out.println(documCollection);
+        System.out.println(documCollection.getSize());
+
     }
 }
