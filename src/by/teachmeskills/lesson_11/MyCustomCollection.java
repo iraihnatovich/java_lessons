@@ -29,7 +29,6 @@ public class MyCustomCollection<T> {
 
     public boolean addElement(T t) {
         if (getSize() == myArr.length) {
-//            grow(10);
             grow(1); // решила увеличивать на 1
         }
         myArr[getSize()] = t;
@@ -54,10 +53,10 @@ public class MyCustomCollection<T> {
         } catch (ArrayIndexOutOfBoundsException e) {
             return "Impossible to get element: " + e.getMessage();
         }
-        return myArr[index].toString(); // 0 =  1st elem, if (length >= index > size) method returns null
+        return myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
     }
 
-    public void clearAll() { //решила этот вариант использ
+    public void clearAll() {
         grow(-myArr.length);
     }
 
