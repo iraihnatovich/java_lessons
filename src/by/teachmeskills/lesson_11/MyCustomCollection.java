@@ -12,9 +12,9 @@ public class MyCustomCollection<T> {
         this.myArr = new Object[length];
     }
 
-    public boolean hasElement(T t) { //
+    public boolean hasElement(T t) {
         for (int i = 0; i < myArr.length; i++) {
-            if (t.equals(myArr[i])) { //equals переопр при необходимости для класса
+            if (t.equals(myArr[i])) {
                 return true;
             }
         }
@@ -30,23 +30,24 @@ public class MyCustomCollection<T> {
     public boolean addElement(T t) {
         if (getSize() == myArr.length) {
 //            grow(10);
-            grow(1); // решила увелич на 1 кажд раз
+            grow(1); // решила увелич на 1
         }
         myArr[getSize()] = t;
         return true;
     }
 
-    public int getSize() { //ПОДУМАТЬ!!!
-        int countElements = 0;
-        for (int i = 0; i < myArr.length; i++) {
-            if (myArr[i] != null) {
-                countElements++;
-            } else {
-                return countElements;
+    public int getSize() {
+        if (myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
+            return myArr.length;
+        } else {
+            int index = 0;
+            while (myArr[index] != null && index < myArr.length) {
+                index++;
             }
+            return index;
         }
-        return countElements;
     }
+
 
     public Object getElement(int index) {
         try {
@@ -54,17 +55,9 @@ public class MyCustomCollection<T> {
         } catch (ArrayIndexOutOfBoundsException e) {
             return "Impossible to get element: " + e.getMessage();
         }
-        return myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
+        return myArr[index].toString(); // 0 =  1st elem, if (length >= index > size) method returns null
     }
 
-    //    public void clearAll(){
-//        for (int i = 0; i < myArr.length; i++) {
-//            if (myArr[i]==null) {
-//               return;
-//            }
-//            myArr[i] = null;
-//        }
-//    }
     public void clearAll() { //решила этот вариант использ
         grow(-myArr.length);
     }
@@ -81,8 +74,7 @@ public class MyCustomCollection<T> {
                     return true;
                 }
             }
-        } catch (NullPointerException e) { // если нет совпадений, а остальные в массиве null
-            // возможно при size < length
+        } catch (NullPointerException e) { // возможно при size < length (есть null)
 //             System.out.println("No matches found");
         }
         System.out.println("No matches found"); // сообщ о несовпадинии должно быть и без NullPointerException
@@ -94,23 +86,5 @@ public class MyCustomCollection<T> {
     }
 
 
-}
-
-class Test {
-    public static void main(String[] args) {
-        MyCustomCollection<Integer> intColl = new MyCustomCollection<Integer>(4);
-        MyCustomCollection<Integer> intColl1 = new MyCustomCollection<Integer>(3);
-        intColl.addElement(12);
-        intColl.addElement(113);
-//        intColl.addElement(6);
-//        intColl.addElement(933);
-//        intColl.addElement(156);
-//        intColl.addElement(5551);
-//        intColl.addElement(72424);
-        System.out.println(intColl);
-        System.out.println(intColl.removeElement(1));
-//        System.out.println(intColl.hasElement(113));
-
-    }
 }
 
