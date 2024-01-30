@@ -6,6 +6,7 @@ public class MyCustomCollection<T> {
     private Object[] myArr;
 
     public MyCustomCollection() {
+        this.myArr = new Object[0]; //0 по умолч
     }
 
     public MyCustomCollection(int length) {
