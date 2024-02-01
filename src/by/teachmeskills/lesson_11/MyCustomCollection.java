@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MyCustomCollection<T> {
     private Object[] myArr;
-    private int size = 0; //или в констр?????
+    private int size = 0;
 
     public MyCustomCollection() {
         this.myArr = new Object[0]; //0 по умол
@@ -50,9 +50,8 @@ public class MyCustomCollection<T> {
         try {
             return (T) myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
         } catch (ArrayIndexOutOfBoundsException e) {
-            return (T) e.getMessage();
-//            return null; // не могу понять какой объект возвр здесь -- null при отсут/отриц index? кажется, странным при наличии элементов null
-            // при возвр текста ошибки - плохой подход
+            throw new OutOfBoundException();
+//            throw new ArrayIndexOutOfBoundsException();
         }
 
     }
@@ -63,9 +62,9 @@ public class MyCustomCollection<T> {
     }
 
     public boolean removeElement(T t) { //по элем, а не индексу - так в задании
-        for (int i = 0; i < myArr.length; i++) { // добавлена проверка знач null для t и элемента массива
+        for (int i = 0; i < getSize(); i++) { // добавлена проверка знач null для t и элемента массива
             if (t != null && myArr[i] != null && myArr[i].equals(t) || (t == null && myArr[i] == null)) { //  первое совпадение перемещаем в конец и отрезаем
-                while (i < myArr.length - 1) {
+                while (i < getSize() - 1) {
                     myArr[i] = myArr[i + 1];
                     i++;
                 }
@@ -75,24 +74,18 @@ public class MyCustomCollection<T> {
             }
         }
         return false;
-
     }
 
     public boolean removeElement(int index) { // дополн сделала удаление по индексу
-        if (index < myArr.length - 1) {
-            try {
-                while (index < myArr.length - 1) {
-                    myArr[index] = myArr[index + 1];
-                    index++;
-                }
-                grow(-1);
-                size--;
-                return true;
-            } catch (ArrayIndexOutOfBoundsException e) {
-                return false;
+        if (index < getSize() - 1 && index >= 0) { // Ошибка ArrayIndexOutOfBoundsException обрабатывала  индекс < 0 (дообавила сейчас в иф)
+            while (index < getSize() - 1) {
+                myArr[index] = myArr[index + 1];
+                index++;
             }
+            grow(-1);
+            size--;
+            return true;
         }
-
         return false;
     }
 
