@@ -14,40 +14,19 @@ public class MyCustomCollection<T> {
         this.myArr = new Object[length];
     }
 
-//    public boolean hasElement(T t) {
-//        for (int i = 0; i < myArr.length; i++) {
-//        try {
-//            if (t.equals(myArr[i])) {
-//                return true;
-//            }
-//        }
-//        catch (NullPointerException e){
-//                if (myArr[i] == t){
-//                    return true;
-//                }
-//            }
-//
-//        }
-//        return false;
-//    }
-public boolean hasElement(T t) {
-    if (t != null) {
-        for (Object o:  myArr) {
-            if (t.equals(o)) {
+    public boolean hasElement(T t) { // работает с null при наличии/отсут в массиве
+        for (Object o : myArr) {
+            if (t != null) { //проверка null чтобы не отлавливать ошибку
+                if (t.equals(o)) {
+                    return true;
+                }
+            } else if (o == null) {
                 return true;
             }
         }
+        return false;
     }
-    else {
-        for (Object o:  myArr) {
-            if (o == null) {
-                return true;
-            }
-        }
-    }
-    return false;
 
-}
     private Object[] grow(int increaseOn) { // /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java:231
         int newLength = myArr.length + increaseOn;
         return myArr = Arrays.copyOf(myArr, newLength);
@@ -56,7 +35,7 @@ public boolean hasElement(T t) {
 
     public boolean addElement(T t) {
         if (getSize() == myArr.length) {
-            grow(1); // решила увеличивать на 1
+            grow(1);
         }
         myArr[getSize()] = t;
         size++;
@@ -67,60 +46,56 @@ public boolean hasElement(T t) {
         return size;
     }
 
-    public T getElement(int index) { // теперь возвр T а не Object...
+    public T getElement(int index) { // теперь возвр T а не Object
         try {
             return (T) myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
         } catch (ArrayIndexOutOfBoundsException e) {
-            return null; // возврат null при отсут/отриц index?????
+            return (T) e.getMessage();
+//            return null; // не могу понять какой объект возвр здесь -- null при отсут/отриц index? кажется, странным при наличии элементов null
+            // при возвр текста ошибки - плохой подход
         }
 
     }
 
     public void clearAll() {
         grow(-myArr.length);
+        size = 0;
     }
 
     public boolean removeElement(T t) { //по элем, а не индексу - так в задании
-        for (int i = 0; i < myArr.length; i++) {
-        try {
-                if (myArr[i].equals(t)) { //  первое совпадение перемещаем в конец и отрезаем
-                    while (i < myArr.length - 1) {
-                        myArr[i] = myArr[i + 1];
-                        i++;
-                    }
-                    grow(-1);
-                    size--;
-                    return true;
-                }}
-                catch (NullPointerException e) { // возможно при size < length (есть null)
-                    if (myArr[i] == t){
-                        while (i < myArr.length - 1) {
-                            myArr[i] = myArr[i + 1];
-                            i++;
-                        }
-                        grow(-1);
-                        size--;
-                        return true;
-                    }
+        for (int i = 0; i < myArr.length; i++) { // добавлена проверка знач null для t и элемента массива
+            if (t != null && myArr[i] != null && myArr[i].equals(t) || (t == null && myArr[i] == null)) { //  первое совпадение перемещаем в конец и отрезаем
+                while (i < myArr.length - 1) {
+                    myArr[i] = myArr[i + 1];
+                    i++;
                 }
-
+                grow(-1);
+                size--;
+                return true;
+            }
         }
         return false;
+
     }
-//    public boolean removeElement(T t) { //по элем, а не индексу - так в задании
-//            for (int i = 0; i < myArr.length; i++) {
-//                if (myArr[i].equals(t) || (myArr[i] == t && t == null)) { //  первое совпадение перемещаем в конец и отрезаем
-//                    while (i < myArr.length - 1) {
-//                        myArr[i] = myArr[i + 1];
-//                        i++;
-//                    }
-//                    grow(-1);
-//                    size--;
-//                    return true;
-//                }
-//            }
-//        return false;
-//    }
+
+    public boolean removeElement(int index) { // дополн сделала удаление по индексу
+        if (index < myArr.length - 1) {
+            try {
+                while (index < myArr.length - 1) {
+                    myArr[index] = myArr[index + 1];
+                    index++;
+                }
+                grow(-1);
+                size--;
+                return true;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                return false;
+            }
+        }
+
+        return false;
+    }
+
 
     public String toString() {
         return Arrays.toString(myArr);
