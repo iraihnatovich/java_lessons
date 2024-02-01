@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class MyCustomCollection<T> {
     private Object[] myArr;
+    private int size = 0; //или в констр?????
 
     public MyCustomCollection() {
-        this.myArr = new Object[0]; //0 по умолч
+        this.myArr = new Object[0]; //0 по умол
     }
 
     public MyCustomCollection(int length) {
@@ -33,19 +34,21 @@ public class MyCustomCollection<T> {
             grow(1); // решила увеличивать на 1
         }
         myArr[getSize()] = t;
+        size++;
         return true;
     }
 
-    public int getSize() {
-        if (myArr.length == 0 || myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
-            return myArr.length;
-        } else {
-            int index = 0;
-            while (myArr[index] != null && index < myArr.length) {
-                index++;
-            }
-            return index;
-        }
+    public int getSize() { //исправлено - расчет в addElement() и removeElement()
+//        if (myArr.length == 0 || myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
+//            return size=myArr.length;
+//        } else {
+//            int index = 0;
+//            while (myArr[index] != null && index < myArr.length) {
+//                index++;
+//            }
+//            return index;
+//        }
+        return size;
     }
 
     public T getElement(int index) { // теперь возвр T а не Object...
@@ -71,13 +74,23 @@ public class MyCustomCollection<T> {
                         i++;
                     }
                     grow(-1);
+                    size--;
                     return true;
                 }
             }
         } catch (NullPointerException e) { // возможно при size < length (есть null)
-//             System.out.println("No matches found");
+            for (int i = 0; i < myArr.length; i++) {
+                if (myArr[i] == null){
+                    while (i < myArr.length - 1) {
+                        myArr[i] = myArr[i + 1];
+                        i++;
+                    }
+                    grow(-1);
+                    size--;
+                    return true;
+                }
+            }
         }
-        System.out.println("No matches found"); // сообщ о несовпадинии должно быть даже без NullPointerException
         return false;
     }
 
