@@ -16,9 +16,17 @@ public class MyCustomCollection<T> {
 
     public boolean hasElement(T t) {
         for (int i = 0; i < myArr.length; i++) {
+        try {
             if (t.equals(myArr[i])) {
                 return true;
             }
+        }
+        catch (NullPointerException e){
+                if (myArr[i] == t){
+                    return true;
+                }
+            }
+
         }
         return false;
     }
@@ -38,16 +46,7 @@ public class MyCustomCollection<T> {
         return true;
     }
 
-    public int getSize() { //исправлено - расчет в addElement() и removeElement()
-//        if (myArr.length == 0 || myArr[myArr.length - 1] != null) { //так как null не может быть между двумя не-null объектами
-//            return size=myArr.length;
-//        } else {
-//            int index = 0;
-//            while (myArr[index] != null && index < myArr.length) {
-//                index++;
-//            }
-//            return index;
-//        }
+    public int getSize() { //инкр/декр в addElement() / removeElement() соответственно
         return size;
     }
 
@@ -55,8 +54,7 @@ public class MyCustomCollection<T> {
         try {
             return (T) myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
         } catch (ArrayIndexOutOfBoundsException e) {
-            return null; // возврат null при отсут/отриц index
-//            (T) ("Impossible to get element: " + e.getMessage());
+            return null; // возврат null при отсут/отриц index?????
         }
 
     }
@@ -66,8 +64,8 @@ public class MyCustomCollection<T> {
     }
 
     public boolean removeElement(T t) { //по элем, а не индексу - так в задании
+        for (int i = 0; i < myArr.length; i++) {
         try {
-            for (int i = 0; i < myArr.length; i++) {
                 if (myArr[i].equals(t)) { //  первое совпадение перемещаем в конец и отрезаем
                     while (i < myArr.length - 1) {
                         myArr[i] = myArr[i + 1];
@@ -76,23 +74,36 @@ public class MyCustomCollection<T> {
                     grow(-1);
                     size--;
                     return true;
-                }
-            }
-        } catch (NullPointerException e) { // возможно при size < length (есть null)
-            for (int i = 0; i < myArr.length; i++) {
-                if (myArr[i] == null){
-                    while (i < myArr.length - 1) {
-                        myArr[i] = myArr[i + 1];
-                        i++;
+                }}
+                catch (NullPointerException e) { // возможно при size < length (есть null)
+                    if (myArr[i] == t){
+                        while (i < myArr.length - 1) {
+                            myArr[i] = myArr[i + 1];
+                            i++;
+                        }
+                        grow(-1);
+                        size--;
+                        return true;
                     }
-                    grow(-1);
-                    size--;
-                    return true;
                 }
-            }
+
         }
         return false;
     }
+//    public boolean removeElement(T t) { //по элем, а не индексу - так в задании
+//            for (int i = 0; i < myArr.length; i++) {
+//                if (myArr[i].equals(t) || (myArr[i] == t && t == null)) { //  первое совпадение перемещаем в конец и отрезаем
+//                    while (i < myArr.length - 1) {
+//                        myArr[i] = myArr[i + 1];
+//                        i++;
+//                    }
+//                    grow(-1);
+//                    size--;
+//                    return true;
+//                }
+//            }
+//        return false;
+//    }
 
     public String toString() {
         return Arrays.toString(myArr);

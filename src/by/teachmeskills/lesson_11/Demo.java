@@ -5,13 +5,14 @@ public class Demo {
     public static void main(String[] args) {
         MyCustomCollection<Integer> intColl = new MyCustomCollection<Integer>();
         intColl.addElement(12);
-        System.out.println(intColl);
+//        System.out.println(intColl);
         intColl.addElement(113);
         intColl.addElement(null);
         System.out.println(intColl);
         System.out.println(intColl.getSize());
-        intColl.removeElement(null);
-//        System.out.println(intColl.getElement(6));
+        System.out.println(intColl.removeElement(null));
+//        System.out.println(intColl.hasElement(113));
+//        System.out.println(intColl.getElement(2));
 //        System.out.println(intColl.getElement(0));
 //        System.out.println(intColl.getElement(-1));
 //        System.out.println(intColl.getElement(11));
