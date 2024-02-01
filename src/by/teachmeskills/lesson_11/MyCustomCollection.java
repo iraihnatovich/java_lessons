@@ -14,23 +14,40 @@ public class MyCustomCollection<T> {
         this.myArr = new Object[length];
     }
 
-    public boolean hasElement(T t) {
-        for (int i = 0; i < myArr.length; i++) {
-        try {
-            if (t.equals(myArr[i])) {
+//    public boolean hasElement(T t) {
+//        for (int i = 0; i < myArr.length; i++) {
+//        try {
+//            if (t.equals(myArr[i])) {
+//                return true;
+//            }
+//        }
+//        catch (NullPointerException e){
+//                if (myArr[i] == t){
+//                    return true;
+//                }
+//            }
+//
+//        }
+//        return false;
+//    }
+public boolean hasElement(T t) {
+    if (t != null) {
+        for (Object o:  myArr) {
+            if (t.equals(o)) {
                 return true;
             }
         }
-        catch (NullPointerException e){
-                if (myArr[i] == t){
-                    return true;
-                }
-            }
-
-        }
-        return false;
     }
+    else {
+        for (Object o:  myArr) {
+            if (o == null) {
+                return true;
+            }
+        }
+    }
+    return false;
 
+}
     private Object[] grow(int increaseOn) { // /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java:231
         int newLength = myArr.length + increaseOn;
         return myArr = Arrays.copyOf(myArr, newLength);

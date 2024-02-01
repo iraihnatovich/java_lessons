@@ -10,8 +10,8 @@ public class Demo {
         intColl.addElement(null);
         System.out.println(intColl);
         System.out.println(intColl.getSize());
-        System.out.println(intColl.removeElement(null));
-//        System.out.println(intColl.hasElement(113));
+        System.out.println(intColl.hasElement(113));
+        System.out.println(intColl.hasElement(null));
 //        System.out.println(intColl.getElement(2));
 //        System.out.println(intColl.getElement(0));
 //        System.out.println(intColl.getElement(-1));
