@@ -77,7 +77,7 @@ public class MyCustomCollection<T> {
     }
 
     public boolean removeElement(int index) { // дополн сделала удаление по индексу
-        if (index < getSize() - 1 && index >= 0) { // Ошибка ArrayIndexOutOfBoundsException обрабатывала  индекс < 0 (дообавила сейчас в иф)
+        if (index < getSize() - 1 && index >= 0) {
             while (index < getSize() - 1) {
                 myArr[index] = myArr[index + 1];
                 index++;
