@@ -48,13 +48,14 @@ public class MyCustomCollection<T> {
         }
     }
 
-    public Object getElement(int index) {
+    public T getElement(int index) { // теперь возвр T а не Object...
         try {
-            Object o = myArr[index];
+            return (T) myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
         } catch (ArrayIndexOutOfBoundsException e) {
-            return "Impossible to get element: " + e.getMessage();
+            return null; // возврат null при отсут/отриц index
+//            (T) ("Impossible to get element: " + e.getMessage());
         }
-        return myArr[index]; // 0 =  1st elem, if (length >= index > size) method returns null
+
     }
 
     public void clearAll() {
