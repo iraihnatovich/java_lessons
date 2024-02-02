@@ -14,8 +14,10 @@ public class Task3 {
     public static void main(String[] args) {
         List<Order> orderList = new ArrayList<>();
         orderList.add(new Order(111,999.23));
+        orderList.add(new Order(100,999.23));
         orderList.add(new Order(5551,194.00));
         orderList.add(new Order(9,2344.99));
+        orderList.add(new Order(8,2344.99));
         orderList.add(new Order(7,500.59));
         System.out.println(orderList);
         orderList.sort(new OrderPriceComparator());
