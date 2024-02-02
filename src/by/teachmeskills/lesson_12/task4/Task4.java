@@ -36,16 +36,13 @@ public class Task4 {
         Order ofjohnDoe111 = new Order(17.6, "cosmetic products");
         johnDoe.addToOrderList(ofjohnDoe);
         johnDoe.addToOrderList(ofjohnDoe111);
-//        System.out.println(johnDoe.getOrders());
-//        System.out.println(janeDoe.getOrders());
-//        System.out.println(client1.getOrders());
         HashMap <String, Client> clientsMap = new HashMap<>();
         clientsMap.put("BH871827",janeDoe);
         clientsMap.put("AD1287121",johnDoe);
         clientsMap.put("NY278787",client1);
 //        System.out.println(clientsMap);
         //все пары ключ-значение, использую Map.Entry<K, V> entry : map.entrySet()
-        for (Map.Entry pair: clientsMap.entrySet()) {
+        for (Map.Entry <String, Client> pair: clientsMap.entrySet()) {
             System.out.println(pair);
         }
         System.out.println();

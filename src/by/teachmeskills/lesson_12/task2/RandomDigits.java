@@ -40,7 +40,6 @@ public class RandomDigits {
         Iterator <Integer> myListIter = myList.iterator();
         while (myListIter.hasNext()){
             sumElements += myListIter.next();
-            System.out.println(sumElements);
         }
         return (double) sumElements /(double) myList.size();
     }
