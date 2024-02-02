@@ -37,8 +37,10 @@ public class RandomDigits {
 
     protected static double average (List myList){
         int sumElements = 0;
-        for(int i =0; i<myList.size(); i++){
-            sumElements  += (Integer) myList.get(i);
+        Iterator <Integer> myListIter = myList.iterator();
+        while (myListIter.hasNext()){
+            sumElements += myListIter.next();
+            System.out.println(sumElements);
         }
         return (double) sumElements /(double) myList.size();
     }
