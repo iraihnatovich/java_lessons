@@ -35,13 +35,6 @@ public class RandomDigits {
         }
     }
 
-//    private static int sumElements(List myList){
-//        int sumElements = 0;
-//        for(int i =0; i<myList.size(); i++){
-//            sumElements  += (Integer) myList.get(i);
-//        }
-//        return sumElements;
-//    }
     protected static double average (List myList){
         int sumElements = 0;
         for(int i =0; i<myList.size(); i++){

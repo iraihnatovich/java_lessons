@@ -17,7 +17,6 @@ public class Task2 {
         List<Integer> intNumbers = new ArrayList<Integer>();
         fillInRandom(intNumbers);
         System.out.println(intNumbers);
-//        System.out.println(sumElements(intNumbers));
         System.out.println(average(intNumbers));
 
     }
