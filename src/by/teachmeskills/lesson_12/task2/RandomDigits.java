@@ -23,8 +23,8 @@ public class RandomDigits {
         Random random = new Random();
         try {
             int myListSize = setSizeFromConsole();
-            if (myListSize <= 1) {
-                throw new IncorrectSizeException("No sense to calculate average if size is <= 1. Enter size again: ");
+            if (myListSize <= 0) { // по идеи с размером = 1 нет смысла считать среднее арифм, но лист создать можем, поэтому оставила  <= 0
+                throw new IncorrectSizeException("Size should be more than zero. Enter size again: ");
             }
             for (int i = 0; i < myListSize; i++) {
                 myList.add(random.nextInt(-100,100));
