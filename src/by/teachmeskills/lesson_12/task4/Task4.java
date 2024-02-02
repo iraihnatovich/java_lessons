@@ -24,14 +24,13 @@ public class Task4 {
     public static void main(String[] args) {
         Client johnDoe = new Client("johndoe",23, LocalDate.of(2023, Month.AUGUST,13));
         Client janeDoe = new Client("janedoe",37, LocalDate.of(2024, Month.JANUARY,24));
-        Client client1 = new Client("Mr White",49, LocalDate.of(2022, Month.MARCH,1));
+        Client client1 = new Client("Mr White",49, LocalDate.of(2022, Month.MARCH,1),
+                List.of(new Order(8378, "car"),
+                new Order(11, "clothes"),
+                new Order(231.0, "pc")));
         janeDoe.addToOrderList(
                 List.of(new Order(100.2, "xmas gift"),
                         new Order(878.3, "tech goods")));
-        client1.addToOrderList(
-                List.of(new Order(8378, "car"),
-                        new Order(11, "clothes"),
-                        new Order(231.0, "pc")));
         Order ofjohnDoe = new Order(227.9, "Lego");
         Order ofjohnDoe111 = new Order(17.6, "cosmetic products");
         johnDoe.addToOrderList(ofjohnDoe);
