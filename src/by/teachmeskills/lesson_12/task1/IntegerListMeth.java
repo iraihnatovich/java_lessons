@@ -1,6 +1,7 @@
 package by.teachmeskills.lesson_12.task1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,13 +24,24 @@ public class IntegerListMeth {
     }
     protected static List<Integer> getEvenNumberList (List myList){
         List<Integer> even = new ArrayList<Integer>();
-        for (Object num: myList){
-            if ((Integer) num % 2 == 0) {
-                even.add((Integer)num);
+        Iterator iterator = myList.iterator();
+        while (iterator.hasNext()){
+            Integer num = (Integer) iterator.next();
+            if (num % 2 == 0) {
+                even.add(num);
             }
         }
         return even;
     }
+// protected static List<Integer> getEvenNumberList (List myList){
+//        List<Integer> even = new ArrayList<Integer>();
+//        for (Object num: myList){
+//            if ((Integer) num % 2 == 0) {
+//                even.add((Integer)num);
+//            }
+//        }
+//        return even;
+//    }
 
 
 }
