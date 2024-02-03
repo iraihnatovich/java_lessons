@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson_12.task4;
+package by.teachmeskills.lesson_12.task4ver1;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -20,14 +20,14 @@ import java.util.Map;
 //        - все ключи, используя map.keySet()
 //        - все значения, используя map.values()
 
-public class Task4 {
+public class Task4ver1 {
     public static void main(String[] args) {
-        Client johnDoe = new Client("johndoe",23, LocalDate.of(2023, Month.AUGUST,13));
-        Client janeDoe = new Client("janedoe",37, LocalDate.of(2024, Month.JANUARY,24));
+        Client johnDoe = new Client("johndoe",23, LocalDate.of(2023, Month.AUGUST,13), "id2163763");
+        Client janeDoe = new Client("janedoe",37, LocalDate.of(2024, Month.JANUARY,24), "id111137873");
         Client client1 = new Client("Mr White",49, LocalDate.of(2022, Month.MARCH,1),
                 List.of(new Order(8378, "car"),
                 new Order(11, "clothes"),
-                new Order(231.0, "pc")));
+                new Order(231.0, "pc")), "id9898137873");
         janeDoe.addToOrderList(
                 List.of(new Order(100.2, "xmas gift"),
                         new Order(878.3, "tech goods")));
@@ -36,22 +36,21 @@ public class Task4 {
         johnDoe.addToOrderList(ofjohnDoe);
         johnDoe.addToOrderList(ofjohnDoe111);
         HashMap <String, Client> clientsMap = new HashMap<>();
-        clientsMap.put("BH871827",janeDoe);
-        clientsMap.put("AD1287121",johnDoe);
-        clientsMap.put("NY278787",client1);
-//        System.out.println(clientsMap);
+        clientsMap.put(johnDoe.getID(), johnDoe);
+        clientsMap.put(janeDoe.getID(), janeDoe);
+        clientsMap.put(client1.getID(), janeDoe);
         //все пары ключ-значение, использую Map.Entry<K, V> entry : map.entrySet()
         for (Map.Entry <String, Client> pair: clientsMap.entrySet()) {
             System.out.println(pair);
         }
         System.out.println();
         //все пары ключ-значение, использую итератор
-        Iterator < Map.Entry <String, Client>> clientsMapIter =  clientsMap.entrySet().iterator();
+        Iterator< Map.Entry <String, Client>> clientsMapIter =  clientsMap.entrySet().iterator();
         while (clientsMapIter.hasNext()){
             Map.Entry <String, Client> personalDataEntry = clientsMapIter.next();
-            System.out.println(personalDataEntry.getKey());
-            System.out.println(personalDataEntry.getValue()+"\n");
-
+            System.out.println(personalDataEntry+"\n");
+//            System.out.println(personalDataEntry.getKey()); //если только ключи через цикл
+//            System.out.println(personalDataEntry.getValue()+"\n"); // если только знач через цикл
         }
         System.out.println("Keys "+clientsMap.keySet()); //все ключи, используя map.keySet()
         System.out.println("Values "+clientsMap.values()); //все значения, используя map.values()

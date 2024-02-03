@@ -1,4 +1,4 @@
-package by.teachmeskills.lesson_12.task4;
+package by.teachmeskills.lesson_12.task4ver1;
 
 public class Order {
    private double price;

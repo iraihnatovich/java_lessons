@@ -1,21 +1,21 @@
 package by.teachmeskills.lesson_12.task3;
 
-public class Order {
+ class Order { //package private
     private final int id;
     private double price;
 
-    public Order(int id, double price) {
+     Order(int id, double price) {  //package private
         this.id = id;
         this.price = price;
     }
 
-    public Integer getId() {
+     Integer getId() {
         return id;
-    }
+    }  //package private
 
-    public Double getPrice() {
+     Double getPrice() {
         return price;
-    }
+    } //package private
 
     public String toString() {
         return "Order #" + id + " price = " + price;
